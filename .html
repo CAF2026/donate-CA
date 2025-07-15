@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Donate to make a boy CA</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .donation-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      width: 350px;
+    }
+    h2 {
+      margin-bottom: 15px;
+    }
+    .upi-id {
+      font-size: 18px;
+      margin: 10px 0;
+      font-weight: bold;
+      color: #444;
+    }
+    button, a.pay-now {
+      padding: 10px 20px;
+      background-color: #5c6bc0;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    button:hover, a.pay-now:hover {
+      background-color: #3f51b5;
+    }
+    img.qr {
+      width: 200px;
+      margin-top: 15px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="donation-box">
+    <h2>Support Daksh </h2>
+    <p>Send your donation via UPI:</p>
+    <div class="upi-id">
+  <span id="upiDisplay">9021xxxx38@fam</span>
+  <span id="upiId" style="display:none;">9021268038@fam</span>
+</div>
+    <button onclick="copyUPI()">Copy UPI ID</button>
+
+    <p style="margin-top: 15px;">Or scan the QR code:</p>
+    <img src="C:\Users\DELL\Downloads\daksh_qr.jpg.jpg" alt="UPI QR Code" class="qr">
+
+    <p style="margin-top: 20px;">Quick Pay:</p>
+    <a class="pay-now" href="upi://pay?pa=9021268038@fam&pn=Daksh&am=10&cu=INR&tn=Support%20Daksh" target="_blank">Pay ₹10 via UPI</a>
+
+    <script>
+      function copyUPI() {
+        const upi = document.getElementById('upiId').textContent;
+        navigator.clipboard.writeText(upi).then(() => {
+          alert("UPI ID copied to clipboard!");
+        });
+      }
+    </script>
+  </div>
+</body>
+</html>
